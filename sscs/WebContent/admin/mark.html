@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<script src="../js/jquery-1.10.1.min.js"></script>
+<style type="text/css">
+.form-horizontal .form-group {
+	margin-right: 0;
+	margin-left: 0;
+}
+</style>
+
+</head>
+<body>
+	<div class="page-header">
+		<h1>二维码管理</h1>
+	</div>
+
+	<form action="../admin/twomark" class="form-horizontal"
+		enctype="multipart/form-data" method="post"
+		onsubmit="javascript:return check();">
+		<div class="form-group">
+			<label for="imageFile" class="col-sm-2 control-label"
+				style="text-align: left">二维码：</label>
+			<div class="col-sm-5">
+				<input id="imageFile" name="imageFile" type="file" />
+			</div>
+
+		</div>
+
+		<div class="form-group">
+			<div class="col-sm-offset-2 col-sm-10">
+				<span id="msg" style="color: red;"></span>
+			</div>
+		</div>
+
+		<br>
+
+		<div class="form-group">
+			<div class="col-sm-offset-2 col-sm-10">
+				<button type="submit" class="btn btn-default">上传</button>
+			</div>
+		</div>
+	</form>
+</body>
+<script type="text/javascript">
+	function check() {
+		var name = $("#imageFile").val();
+		if (name == null || name == "") {
+			$('#msg').html("上传文件不能为空");
+			return false;
+		}
+		return true;
+	}
+</script>
+</html>

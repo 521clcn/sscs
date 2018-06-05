@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+        http://www.springframework.org/schema/beans/spring-beans.xsd 
+        http://www.springframework.org/schema/context 
+        http://www.springframework.org/schema/context/spring-context.xsd 
+        http://www.springframework.org/schema/tx 
+        http://www.springframework.org/schema/tx/spring-tx.xsd
+        http://www.springframework.org/schema/mvc
+        http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+	<!-- spring 定时任务配置 -->
+	<bean name="quartzScheduler"
+		class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+		<property name="triggers">
+			<list>
+				<ref bean="getKPIValueTrigger" />
+			</list>
+		</property>
+		<property name="autoStartup" value="true" />
+	</bean>
+
+	<!-- Cron表达式范例： 每隔5秒执行一次：*/5 * * * * ? 每隔1分钟执行一次：0 */1 * * * ? 每天23点执行一次：0 
+		0 23 * * ? 每天凌晨1点执行一次：0 0 1 * * ? 每月1号凌晨1点执行一次：0 0 1 1 * ? 每月最后一天23点执行一次：0 
+		0 23 L * ? 每周星期天凌晨1点实行一次：0 0 1 ? * L 在26分、29分、33分执行一次：0 26,29,33 * * * ? 
+		每天的0点、13点、18点、21点都执行一次：0 0 0,13,18,21 * * ? -->
+	<bean id="getKPIValueTrigger"
+		class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+		<property name="jobDetail" ref="getKPIValueDetail" />
+		<property name="cronExpression" value="0 0/5 * * * ?" />
+		<!--每隔5分钟触发一次-->
+	</bean>
+	<bean id="getKPIValueDetail"
+		class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject" ref="getKPIValueJob" />
+		<property name="targetMethod" value="execute" />
+		<property name="concurrent" value="false" />
+	</bean>
+	
+	<bean id="getKPIValueJob" class="com.ygsoft.djcs.job.WsdlKPIValueJob"></bean>
+</beans>

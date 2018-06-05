@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+        http://www.springframework.org/schema/beans/spring-beans.xsd 
+        http://www.springframework.org/schema/context 
+        http://www.springframework.org/schema/context/spring-context.xsd 
+        http://www.springframework.org/schema/tx 
+        http://www.springframework.org/schema/tx/spring-tx.xsd
+        http://www.springframework.org/schema/mvc
+        http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+	<!-- 引入属性文件 -->
+	<context:property-placeholder location="classpath:config.properties" />
+	<!-- 自动扫描dao和service包(自动注入) -->
+	<context:component-scan base-package="com.sxg.cms.controller,com.sxg.cms.service,com.sxg.cms.dao" />
+	<mvc:annotation-driven />
+
+	<mvc:default-servlet-handler />
+	
+	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+         <property name="prefix" value="/admin/"></property>
+         <property name="suffix" value=".html"></property>
+    </bean>
+
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver" />  
+
+</beans>
