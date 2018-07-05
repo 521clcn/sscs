@@ -29,6 +29,12 @@ public class LoginAccessFilter implements Filter{
         if(basePath.indexOf("cs.ssdjz.com.cn")!=-1) {
         	basePath = req.getScheme()+"://"+req.getServerName()+":"+req.getServerPort();  
         }
+        
+        if(requestPath.equals("/admin/login.html")) {
+    		chain.doFilter(req, resp);  
+    		return;
+        }
+        
         HttpSession session = req.getSession();  
         logger.info("-------------------------filter session "+session);
         String username = (String) session.getAttribute("username");  
@@ -40,10 +46,10 @@ public class LoginAccessFilter implements Filter{
         logger.info("-------------------------filter requestPath "+requestPath);
         logger.info("-------------------------filter Path "+basePath+requestPath);
         if (username == null || "".equals(username)) {  
-            resp.sendRedirect(basePath+"/login.jsp");  
+            resp.sendRedirect(basePath+"/admin/login.html");  
         }else { 
         	if(requestPath.equals("/admin/user.html")&&!"0".equals(user.getType())) {
-        		resp.sendRedirect(basePath+"/login.jsp");  
+        		resp.sendRedirect(basePath+"/admin/login.html");  
             }else {
             	chain.doFilter(req, resp);  
             }
