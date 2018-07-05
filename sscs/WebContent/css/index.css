@@ -70,22 +70,22 @@ margin: 0 auto;
   z-index:1;
 }
 
-.title{}
-.title h2{color:#e11b1c; font-size:18px; float:left; font-weight:normal; height:24px; line-height:24px;}
+.title{ padding:25px;padding-bottom:0;}
+.title h2{color:#e11b1c; font-size:18px; float:left; font-weight:normal; height:28px; line-height:28px; border-bottom: 2px solid #e11b1c;}
 .title h2 i{ width:8px; height:2px; background:url(../images/title_bg1.png) no-repeat; display:block; float:left; margin-right:10px; margin-top:11px;}
 .title h2 a{color:#e11b1c; font-size:18px;}
 .title a.more{ width:65px; height:30px; display:inline-block;*display:inline;*zoom:1; line-height:30px; background:#f0f0f0; text-align:center;color:#e11b1c; font-size:12px; float:right;}
 
-.news{ width:740px; height:1187px; float:left; background:#fff; margin-top:30px; padding:25px;}
-.main_list{}
+.news{ width:100%; float:left; background:#fff; margin-top:30px;}
+.main_list{ padding:25px;padding-top:0}
 .main_list ul{}
 .main_list ul li{border-bottom:1px solid #ebebeb; padding:26px 0; min-height:116px;}
 .main_list ul li a{}
 .main_list ul li img{ border:none; width:155px; height:113px; display:block; float:left; vertical-align:bottom;}
-.list_text{  float:right; width:572px;}
+.list_text{}
 .list_text em{ background:url(../../images/agency/notice_detail_icon3.png) no-repeat; width:8px; height:15px; display:inline-block;*display:inline;*zoom:1; vertical-align:top; margin-top:9px;}
-.list_text h3{ display:inline-block;width:550px; color:#333333; font-size:18px; line-height:32px;  margin-left:12px; font-weight:normal; min-height:64px;}
-.list_text span{ display:block; color:#999999; font-size:12px; line-height:30px; margin-left:22px;}
+.list_text h3{ display:inline-block; color:#333333; font-size:18px; line-height:32px;  margin-left:12px; font-weight:normal; min-height:64px;}
+.list_text span{ display:block; color:#999999; font-size:12px; line-height:30px; margin-left:180px;}
 .main_list ul li:hover .list_text h3{color:#e11b1c;}
 
 .sidebar{ width:380px; float:right;  margin-top:30px;}   
