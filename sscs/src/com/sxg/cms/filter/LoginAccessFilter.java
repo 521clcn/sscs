@@ -21,35 +21,34 @@ public class LoginAccessFilter implements Filter{
 	@Override
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
 			throws IOException, ServletException {
-		chain.doFilter(request, response);
-//		HttpServletRequest req = (HttpServletRequest) request;  
-//        HttpServletResponse resp = (HttpServletResponse) response;  
-//        String requestPath = req.getServletPath();
-//        String path = req.getContextPath();  
-//        String basePath = req.getScheme()+"://"+req.getServerName()+":"+req.getServerPort()+path;  
-//        if(basePath.indexOf("cs.ssdjz.com.cn")!=-1) {
-//        	basePath = req.getScheme()+"://"+req.getServerName()+":"+req.getServerPort();  
-//        }
-//        HttpSession session = req.getSession();  
-//        logger.info("-------------------------filter session "+session);
-//        String username = (String) session.getAttribute("username");  
-//        
-//        logger.info("-------------------------filter username "+username);
-//        User user = (User) session.getAttribute("user");  
-//        
-//        logger.info("-------------------------filter basePath "+basePath);
-//        logger.info("-------------------------filter requestPath "+requestPath);
-//        logger.info("-------------------------filter Path "+basePath+requestPath);
-//        if (username == null || "".equals(username)) {  
-//            resp.sendRedirect(basePath+"/login.jsp");  
-//        }else { 
-//        	if(requestPath.equals("/admin/user.html")&&!"0".equals(user.getType())) {
-//        		resp.sendRedirect(basePath+"/login.jsp");  
-//            }else {
-//            	chain.doFilter(req, resp);  
-//            }
-//            
-//        }  
+		HttpServletRequest req = (HttpServletRequest) request;  
+        HttpServletResponse resp = (HttpServletResponse) response;  
+        String requestPath = req.getServletPath();
+        String path = req.getContextPath();  
+        String basePath = req.getScheme()+"://"+req.getServerName()+":"+req.getServerPort()+path;  
+        if(basePath.indexOf("cs.ssdjz.com.cn")!=-1) {
+        	basePath = req.getScheme()+"://"+req.getServerName()+":"+req.getServerPort();  
+        }
+        HttpSession session = req.getSession();  
+        logger.info("-------------------------filter session "+session);
+        String username = (String) session.getAttribute("username");  
+        
+        logger.info("-------------------------filter username "+username);
+        User user = (User) session.getAttribute("user");  
+        
+        logger.info("-------------------------filter basePath "+basePath);
+        logger.info("-------------------------filter requestPath "+requestPath);
+        logger.info("-------------------------filter Path "+basePath+requestPath);
+        if (username == null || "".equals(username)) {  
+            resp.sendRedirect(basePath+"/login.jsp");  
+        }else { 
+        	if(requestPath.equals("/admin/user.html")&&!"0".equals(user.getType())) {
+        		resp.sendRedirect(basePath+"/login.jsp");  
+            }else {
+            	chain.doFilter(req, resp);  
+            }
+            
+        }  
 	}
 	
 	public void init(FilterConfig filterConfig) throws ServletException {}

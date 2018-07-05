@@ -34,7 +34,6 @@ public class UserController {
 	@RequestMapping(value = "/login")
 	public void login(HttpServletRequest request, HttpServletResponse response, 
 			@RequestParam("username") String username, @RequestParam("password") String password) {
-		Map<String, Object> result = new HashMap<String, Object>();
 		String path = request.getContextPath();  
 		String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path;
 		try {
@@ -60,17 +59,15 @@ public class UserController {
 //				response.sendRedirect("../../admin/main.html");
 				response.sendRedirect(basePath+"/admin/main.html");
 				
-				logger.info("-------------------------login end ");
+//				logger.info("-------------------------login end ");
 			}else {
 				logger.info("-------------------------login error ");
 				response.sendRedirect(basePath+"/login.jsp?msg=error");
 			}
-			result.put("suc", "yes");
-			result.put("data", user);
 
 		} catch (Exception e) {
-			result.put("suc", "no");
-			result.put("msg", "error");
+			e.printStackTrace();
+			logger.error(e.getMessage());
 		}
 	}
 	
