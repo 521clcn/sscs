@@ -48,7 +48,7 @@ public class UserController {
 				
 		        String requestPath = request.getServletPath();
 		        
-		        if(basePath.indexOf("sx.ssdjz.com.cn")!=-1) {
+		        if(basePath.indexOf("cs.ssdjz.com.cn")!=-1) {
 		        	basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort();  
 		        }
 		        logger.info("-------------------------filter basePath "+basePath);

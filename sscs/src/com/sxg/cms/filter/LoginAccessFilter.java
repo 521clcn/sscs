@@ -27,7 +27,7 @@ public class LoginAccessFilter implements Filter{
 //        String requestPath = req.getServletPath();
 //        String path = req.getContextPath();  
 //        String basePath = req.getScheme()+"://"+req.getServerName()+":"+req.getServerPort()+path;  
-//        if(basePath.indexOf("sx.ssdjz.com.cn")!=-1) {
+//        if(basePath.indexOf("cs.ssdjz.com.cn")!=-1) {
 //        	basePath = req.getScheme()+"://"+req.getServerName()+":"+req.getServerPort();  
 //        }
 //        HttpSession session = req.getSession();  
