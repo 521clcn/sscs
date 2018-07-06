@@ -112,6 +112,7 @@
 			<tx:method name="count*" propagation="REQUIRED" read-only="true" /> 
 			<tx:method name="find*" propagation="REQUIRED" read-only="true" /> 
 			<tx:method name="list*" propagation="REQUIRED" read-only="true" /> 
+			<tx:method name="adminList" propagation="REQUIRED" read-only="true" /> 
 			<tx:method name="is*" propagation="REQUIRED" read-only="true" /> 
 
 		</tx:attributes>

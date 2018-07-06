@@ -33,8 +33,8 @@ public class NewsServiceImpl implements NewsService {
 	}
 	
 	@Override
-	public List<News> adminList(User user) {
-		return newsDao.adminList(user);
+	public List<News> adminList(User user,Integer startPage,Integer pageSize) {
+		return newsDao.adminList(user,startPage, pageSize);
 	}
 
 	@Override
@@ -47,6 +47,11 @@ public class NewsServiceImpl implements NewsService {
 	public void delete(String id) {
 		newsDao.delete(id);
 		
+	}
+
+	@Override
+	public Integer countNews(User user) {
+		return newsDao.countNews(user);
 	}
 
 }

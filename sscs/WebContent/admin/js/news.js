@@ -35,16 +35,20 @@ $().ready(function(){
 		});
 		
 		var id = GetQueryString("id");
-		$.post("../news/findById",{id:id},function(res){
-		    var data = res.data;
-		    
-		    $("#id").val(data.id);
-		    $("#accessid").combobox("setValue", data.accessid);
-		    $("#title").val(data.title);
-		    
-		    editor.setContent(data.content);
-		});
-
+		if(id!=null){
+			$.post("../news/findById",{id:id},function(res){
+			    var data = res.data;
+			    
+			    $("#id").val(data.id);
+			    $("#accessid").combobox("setValue", data.accessid);
+			    $("#title").val(data.title);
+			    
+//			    editor.setContent(data.content);
+			    editor.ready(function() {
+			    	editor.setContent(data.content);
+			    },2);
+			});
+		}
 });
 
 function GetQueryString(param){

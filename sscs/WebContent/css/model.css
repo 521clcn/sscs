@@ -7143,3 +7143,11 @@ td.visible-print {
     display: none !important;
   }
 }
+
+a[accessid=dt] + ul{
+	padding-left:20px !important;
+}
+
+li ul{
+	padding-left:10px !important;
+}

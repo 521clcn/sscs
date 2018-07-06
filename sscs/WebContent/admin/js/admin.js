@@ -2,10 +2,11 @@
  * 
  */
 $().ready(function(){
-	$("#introduce").parent().addClass("active");
-	$("#introduce").parent().parent().parent().addClass("active");
+	$("#newsList").parent().addClass("active");
+	$("#newsList").parent().parent().parent().addClass("active");
+	$("#newsList").parent().parent().parent().parent().parent().addClass("active");
 	
-	$("#contentFrame").attr("src","../admin/introduce.html?type=1&accessid=jj");  
+	$("#contentFrame").attr("src","../admin/newsList.html");  
 	
 //	$.post("../user/user",{},function(res){
 //	    var data = res.data;
@@ -26,6 +27,7 @@ $("#admin_menu a").click(function() {
 	$("#admin_menu .active").removeAttr('class');
 	$(this).parent().addClass("active");
 	$(this).parent().parent().parent().addClass("active");
+	$(this).parent().parent().parent().parent().parent().addClass("active");
 	if(action!="no"){
 		var type = $(this).attr("type");
 		var accessid = $(this).attr("accessid");
