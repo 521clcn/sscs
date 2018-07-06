@@ -15,7 +15,6 @@ import org.springframework.stereotype.Repository;
 
 import com.sxg.cms.dao.NewsDao;
 import com.sxg.cms.entity.News;
-import com.sxg.cms.entity.User;
 
 @Repository("newsDao")
 public class NewsDaoImpl extends HibernateDaoSupport implements NewsDao {
@@ -73,55 +72,28 @@ public class NewsDaoImpl extends HibernateDaoSupport implements NewsDao {
 	}
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<News> adminList(User user,Integer startPage,Integer pageSize) {
-		String type = user.getType();
-		startPage = startPage-1;
-		if("0".equals(type)) {
-			String hql = "from News order by status ASC, userid ASC, releaseTime DESC";
-			
-			int beginIndex = startPage*pageSize;
-			Session session = super.getSessionFactory().getCurrentSession();
-			Query query = session.createQuery(hql);
-			query.setFirstResult(beginIndex);
-			query.setMaxResults(pageSize);		
-			
-			List<News> list = query.getResultList();				
-			
-//			List<News> list = (List<News>) super.getHibernateTemplate().find(hql);
-			return list;
-		}else {
-			String userId = user.getId();
-			String hql = "from News where userid = ? order by status ASC, releaseTime DESC";
-			
-			int beginIndex = startPage*pageSize;
-			Session session = super.getSessionFactory().getCurrentSession();
-			Query query = session.createQuery(hql);
-			query.setFirstResult(beginIndex);
-			query.setMaxResults(pageSize);		
-			query.setParameter(0, userId);
-			
-			List<News> list = query.getResultList();	
-			
-//			List<News> list = (List<News>) super.getHibernateTemplate().find(hql,userId);
-			return list;
-		}
+	public List<News> adminList(String accessid,Integer startPage,Integer pageSize) {
+		String hql = "from News where accessid = ? order by status ASC, releaseTime DESC";
 		
+		startPage = startPage-1;
+		int beginIndex = startPage*pageSize;
+		
+		Session session = super.getSessionFactory().getCurrentSession();
+		Query query = session.createQuery(hql);
+		query.setFirstResult(beginIndex);
+		query.setMaxResults(pageSize);		
+		query.setParameter(0, accessid);
+			
+		List<News> list = query.getResultList();	
+			
+		return list;
 	}
 	
 	@Override
-	public Integer countNews(User user) {
-		String type = user.getType();
-		if("0".equals(type)) {
-			String hql = "select count(*) from News";		
-			Long count =  (Long) getHibernateTemplate().iterate(hql).next();
-			return count.intValue();
-		}else {
-			String userId = user.getId();
-			String hql = "select count(*) from News where userid = ?";
-			
-			Long count =  (Long) getHibernateTemplate().iterate(hql,userId).next();
-			return count.intValue();
-		}		
+	public Integer countNews(String accessid) {		
+		String hql = "select count(*) from News where accessid = ?";			
+		Long count =  (Long) getHibernateTemplate().iterate(hql,accessid).next();
+		return count.intValue();		
 	}
 
 	@Override

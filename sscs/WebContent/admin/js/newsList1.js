@@ -5,9 +5,9 @@ $().ready(function() {
 	initUserTable();
 	initUserData();
 	$("#admin_menu .active", parent.document).removeAttr('class');
-	$("#newsList", parent.document).parent().addClass("active");
-	$("#newsList", parent.document).parent().parent().parent().addClass("active");
-	$("#newsList", parent.document).parent().parent().parent().parent().parent().addClass("active");
+	$("#newsList1", parent.document).parent().addClass("active");
+	$("#newsList1", parent.document).parent().parent().parent().addClass("active");
+	$("#newsList1", parent.document).parent().parent().parent().parent().parent().addClass("active");
 	
 	$("#edit").click(function(){
 		var row = $('#newsTable').datagrid('getSelected');
@@ -91,11 +91,7 @@ $().ready(function() {
 });
 
 function initUserData(){
-	var type = GetQueryString("type");
-	var accessid= "2";
-	if(type=="home"){
-		accessid="1";
-	}
+	var accessid= "1";
 	
 	var options = $("#newsTable" ).datagrid("getPager" ).data("pagination" ).options;
     var curr = options.pageNumber;
@@ -162,7 +158,7 @@ function initUserTable(){
 			{field:"accessid",title:"栏目",width:"20%",
 				formatter:function(value,row,index){
 					if(value!=null&&value!=""){
-						value = value.replace("1","管理员");
+						value = value.replace("1","首页新闻");
 						value = value.replace("2","新闻");
 						value = value.replace("3","公告");
 						value = value.replace("4","研究");

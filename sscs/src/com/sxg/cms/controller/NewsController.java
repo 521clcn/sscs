@@ -70,6 +70,10 @@ public class NewsController {
 			@RequestParam("content") String content,
 			@RequestParam("accessid") String accessid) {
 		Map<String, Object> result = new HashMap<String, Object>();
+		String address = "newsList";
+		if("1".equals(accessid)) {
+			address = "newsList1";
+		}
 		try {	 
 			String imagePath = "";
 			News news = new News();
@@ -111,19 +115,19 @@ public class NewsController {
 			result.put("msg", e.getMessage());
 			e.printStackTrace();
 		}
-		return "newsList";
+		return address;
 	}
 	
 	@ResponseBody
 	@RequestMapping(value = "/news/admin/list")
 	public Map<String,Object> adminList(HttpServletRequest request,
             @RequestParam("startPage") Integer startPage,
-            @RequestParam("pageSize") Integer pageSize) {
+            @RequestParam("pageSize") Integer pageSize,
+            @RequestParam("accessid") String accessid) {
 		Map<String, Object> result = new HashMap<String, Object>();
 		try {
-			User user = (User) request.getSession().getAttribute("user");
-			List <News> list = newsService.adminList(user,startPage,pageSize);
-			Integer total = newsService.countNews(user);
+			List <News> list = newsService.adminList(accessid,startPage,pageSize);
+			Integer total = newsService.countNews(accessid);
 
 			result.put("suc", "yes");
 			result.put("data", list);

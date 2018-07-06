@@ -7,7 +7,6 @@ import org.springframework.stereotype.Service;
 
 import com.sxg.cms.dao.NewsDao;
 import com.sxg.cms.entity.News;
-import com.sxg.cms.entity.User;
 import com.sxg.cms.service.NewsService;
 
 @Service("newsService")
@@ -33,8 +32,8 @@ public class NewsServiceImpl implements NewsService {
 	}
 	
 	@Override
-	public List<News> adminList(User user,Integer startPage,Integer pageSize) {
-		return newsDao.adminList(user,startPage, pageSize);
+	public List<News> adminList(String accessid,Integer startPage,Integer pageSize) {
+		return newsDao.adminList(accessid,startPage, pageSize);
 	}
 
 	@Override
@@ -50,8 +49,8 @@ public class NewsServiceImpl implements NewsService {
 	}
 
 	@Override
-	public Integer countNews(User user) {
-		return newsDao.countNews(user);
+	public Integer countNews(String accessid) {
+		return newsDao.countNews(accessid);
 	}
 
 }
