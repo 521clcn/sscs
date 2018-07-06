@@ -7,6 +7,7 @@ $().ready(function(){
 			$("#contract").val(data.contract);
 			$("#email").val(data.email);
 			$("#copyright").val(data.copyright);
+			$("#record").val(data.record);
 		}
 	});
 

@@ -23,7 +23,8 @@ public class FooterController {
 			@RequestParam(value="address",required=false) String address,
 			@RequestParam(value="contract",required=false) String contract,
 			@RequestParam(value="email",required=false) String email,
-			@RequestParam(value="copyright",required=false) String copyright) {
+			@RequestParam(value="copyright",required=false) String copyright,
+			@RequestParam(value="record",required=false) String record) {
 		Map<String, Object> result = new HashMap<String, Object>();
 		try {
 			Footer footer = footerService.list();
@@ -34,6 +35,7 @@ public class FooterController {
 			footer.setContract(contract);
 			footer.setEmail(email);
 			footer.setCopyright(copyright);
+			footer.setRecord(record);
 			
 			footerService.save(footer);
 			

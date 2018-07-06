@@ -11,7 +11,7 @@ import javax.persistence.Table;
 import org.hibernate.annotations.GenericGenerator;
 
 @Entity
-@Table(name = "FOOTER_INFO")
+@Table(name = "ABOUTUS_INFO")
 public class Footer implements Serializable {
 
 	/**
@@ -32,6 +32,8 @@ public class Footer implements Serializable {
 	private String email;
 	
 	private String copyright;
+	
+	private String record;
 
 	public String getId() {
 		return id;
@@ -71,6 +73,14 @@ public class Footer implements Serializable {
 
 	public void setCopyright(String copyright) {
 		this.copyright = copyright;
+	}
+
+	public String getRecord() {
+		return record;
+	}
+
+	public void setRecord(String record) {
+		this.record = record;
 	}
 
 	
