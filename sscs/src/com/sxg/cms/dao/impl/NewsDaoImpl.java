@@ -35,23 +35,21 @@ public class NewsDaoImpl extends HibernateDaoSupport implements NewsDao {
 	public List<News> list(String accessid,String pageIndex) {
 		String hql = "from News";
 		List<News> list = new ArrayList<News>();
-		if("page4".equals(accessid)) {
-			hql = "from News where accessid = '2' and status='1' order by releaseTime desc ";
+		if("home".equals(accessid)) {
+			hql = "from News where accessid = '1' and status='1' order by releaseTime desc ";
 			HibernateTemplate template = super.getHibernateTemplate();
-			template.setMaxResults(9);
+			template.setMaxResults(5);
 			list = (List<News>) template.find(hql);
 			
 			template.setMaxResults(0);
 		}else {
 			hql = "from News where accessid = ? and status='1' order by releaseTime desc";
-//			HibernateTemplate template = super.getHibernateTemplate();
 			int beginIndex = new Integer(pageIndex)*10;
 			Session session = super.getSessionFactory().getCurrentSession();
 			Query query = session.createQuery(hql);
 			query.setFirstResult(beginIndex);
 			query.setMaxResults(10);		
 			query.setParameter(0, accessid);
-//			query.getResultList();
 			
 			list = query.getResultList();			
 		}
