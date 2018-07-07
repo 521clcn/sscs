@@ -1,0 +1,49 @@
+/* CSS Document */
+.con_main{ width:793px; float:left; background:#fff; margin-top:30px; padding:0 40px 50px 40px; margin-bottom:100px;}
+.con_side{ width:256px; float:right; background:#fff; margin-top:30px; padding:0 20px 50px 20px;}
+.con_main >.title{ height:70px; border-bottom:1px solid #ebebeb; line-height:70px;}
+.con_main >.title img{display:inline-block;*display:inline;*zoom:1; border:none; vertical-align:middle;}
+.con_main >.title h2{ display:inline-block;*display:inline;*zoom:1; height:70px; vertical-align:middle; padding-left:16px; color:#e11b1c; font-size:20px; font-weight:normal;}
+.con_main .title h2 a{ color:#e11b1c; font-size:20px;}
+.main_list{}
+.main_list ul{}
+.main_list ul li{border-bottom:1px solid #ebebeb; padding:26px 0 26px 0;}
+.main_list ul li a{}
+.main_list ul li img{ border:none; width:155px; height:113px; display:inline-block;*display:inline;*zoom:1; float:left;}
+.list_text{ display:inline-block;*display:inline;*zoom:1; float:right; width:602px;}
+.list_text em{width:8px; height:15px; display:inline-block;*display:inline;*zoom:1; vertical-align:top; margin-top:9px;}
+.list_text h3{ display:inline-block;*display:inline;*zoom:1; width:550px; color:#333333; font-size:18px; line-height:32px;  margin-left:12px; font-weight:normal; min-height:64px;}
+.list_text span{ display:block; color:#999999; font-size:12px; line-height:30px; margin-left:22px;}
+.main_list ul li:hover .list_text h3{color:#e11b1c;}
+.con_side .title{height:70px; border-bottom:1px solid #ebebeb; line-height:70px;}
+.con_side .title h2{display:inline-block;*display:inline;*zoom:1; height:70px; vertical-align:middle; padding-left:16px; color:#333333; font-size:16px; font-weight:normal;}
+.con_side .title h2 a{color:#333333; font-size:16px;}
+
+.con_side ul{ padding-top:20px;}
+.con_side ul li{ color:#666; font-size:14px; line-height:32px; background:url(../../images/agency/news_title_icon1.png)  left  13.5px no-repeat; padding-left:12px;       }
+.con_side ul li a{color:#666; font-size:14px;text-overflow:ellipsis; white-space:nowrap; overflow:hidden; display:block; width:100%;}
+.con_side ul li a:hover{color:#e11b1c;}
+.headline{ margin-top:25px;}
+.headline a{}
+.headline img{ width:256px; height:180px; border:none; vertical-align:bottom;}
+.headline p{ height:42px; text-align:center; color:#666; background:#f2f2f2; line-height:42px;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;padding:0 5px;}
+.headline:hover p{color:#e11b1c;}
+.headline ul li {background:none; padding:0;}
+.page{ text-align:center;}
+
+
+.main_article{}
+.article{ padding:30px 0px 70px 0px;/*border-bottom:1px solid #ebebeb;*/}
+.article .title{ /*border-bottom:1px solid #ebebeb; */padding-bottom:14px;}
+.article .title h2{ color:#333333; font-size:24px; font-weight:normal; line-height:60px; text-align:center;}
+.article .title .related{text-align:center; line-height:60px;}
+.article .title .related span{ color:#999999; font-size:14px; line-height:60px; }
+.article .title .related img{ vertical-align:middle; border:none; margin-left:20px;}
+/*.art_con{ color:#666666; font-size:14px; line-height:260%; padding-top:20px;}
+.art_con p{}*/
+.back{ /*padding:0 40px;*/ margin-top:50px;}
+.back ul{ display:inline-block;*display:inline;*zoom:1; float:left; }
+.back ul li{ color:#666666; font-size:14px; line-height:30px;}
+.back ul li a{color:#666666; font-size:14px;}
+.back ul li a:hover{color:#e11b1c;}
+a.back_btn{ display:inline-block;*display:inline;*zoom:1; float:right; width:116px; height:40px; line-height:40px; text-align:center; background:#e11b1c; color:#fff; margin-top:8px; border-radius:5px;}
