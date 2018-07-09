@@ -25,10 +25,10 @@ $(function () {
         }
         return flag
     }
-    if (!isPC())
-    {
-        location.href = "http://m.cfpa.org.cn/index.html";
-    }
+//    if (!isPC())
+//    {
+//        location.href = "http://m.cfpa.org.cn/index.html";
+//    }
 	   GetwindowHeight();
 		function GetwindowHeight(){
 		    //var  bannerHeight=$(window).height()-$(".top_wapp").height()-$("nav").height();
@@ -115,18 +115,18 @@ $(function () {
 		  itemAjaxSlide(selectTabId);
 	   })
 	   function itemAjaxSlide(id){
-            $.ajax({
-                url: 'getProjectlist.ashx',
-                type: 'get',
-				async:false,
-				data: { tid: id },
-                success: function (data) {
-					$(".item .itemlist .hd ul").empty();
-					$(".item .itemlist .bd").empty();
-					$(".item .itemlist .bd").append(data); 
-					jQuery(".itemlist").slide({titCell:".hd ul",mainCell:".bd ul",autoPage:true,effect:"leftLoop",autoPlay:true,vis:4,scroll:4}); 
-                }
-            });
+//            $.ajax({
+//                url: 'getProjectlist.ashx',
+//                type: 'get',
+//				async:false,
+//				data: { tid: id },
+//                success: function (data) {
+//					$(".item .itemlist .hd ul").empty();
+//					$(".item .itemlist .bd").empty();
+//					$(".item .itemlist .bd").append(data); 
+//					jQuery(".itemlist").slide({titCell:".hd ul",mainCell:".bd ul",autoPage:true,effect:"leftLoop",autoPlay:true,vis:4,scroll:4}); 
+//                }
+//            });
 		   
 	   
 	   }
@@ -140,27 +140,27 @@ $(function () {
 		   friendAjaxSlide(selectTabId);
 	   })
 	   function friendAjaxSlide(id){
-		       $.ajax({
-		        url: 'getfriendlinklist.ashx',
-                type: 'get',
-				async:false,
-                data: { tid: id},
-                success: function (data) {
-					$(".friend .friend_list").remove();
-					$(".friend").append("<div class='friend_list'><div class='bd clearfix'></div><div class='hd'><ul></ul></div></div>");
-					jQuery(".friend .friend_list .bd").append(data);
-					jQuery(".friend_list").slide({titCell:".hd ul",mainCell:".bd",autoPage:true,effect:"leftLoop",autoPlay:true,vis:8,scroll:8}); 
-					/*if(id=="friend_4") //多行判定
-					{	
-					  jQuery(".friend .friend_list .bd li").each(function(i){ jQuery(".friend .friend_list .bd li").slice(i*24,i*24+24).wrapAll("<ul></ul><");});				
-					  jQuery(".friend_list").slide({titCell:".hd ul",mainCell:".bd",autoPage:true,effect:"leftLoop",autoPlay:true,vis:1,scroll:1}); 
-				    }
-					else
-					{
-					   jQuery(".friend_list").slide({titCell:".hd ul",mainCell:".bd",autoPage:true,effect:"leftLoop",autoPlay:true,vis:8,scroll:8}); 
-				    }*/
-                 }
-              });
+//		       $.ajax({
+//		        url: 'getfriendlinklist.ashx',
+//                type: 'get',
+//				async:false,
+//                data: { tid: id},
+//                success: function (data) {
+//					$(".friend .friend_list").remove();
+//					$(".friend").append("<div class='friend_list'><div class='bd clearfix'></div><div class='hd'><ul></ul></div></div>");
+//					jQuery(".friend .friend_list .bd").append(data);
+//					jQuery(".friend_list").slide({titCell:".hd ul",mainCell:".bd",autoPage:true,effect:"leftLoop",autoPlay:true,vis:8,scroll:8}); 
+//					/*if(id=="friend_4") //多行判定
+//					{	
+//					  jQuery(".friend .friend_list .bd li").each(function(i){ jQuery(".friend .friend_list .bd li").slice(i*24,i*24+24).wrapAll("<ul></ul><");});				
+//					  jQuery(".friend_list").slide({titCell:".hd ul",mainCell:".bd",autoPage:true,effect:"leftLoop",autoPlay:true,vis:1,scroll:1}); 
+//				    }
+//					else
+//					{
+//					   jQuery(".friend_list").slide({titCell:".hd ul",mainCell:".bd",autoPage:true,effect:"leftLoop",autoPlay:true,vis:8,scroll:8}); 
+//				    }*/
+//                 }
+//              });
 		   
 	    }
       

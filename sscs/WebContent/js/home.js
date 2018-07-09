@@ -5,9 +5,6 @@
 $().ready(function(){	
 	loadPages();
 	loadNews();
-	
-
-
 });
 
 function loadPages(){
@@ -26,7 +23,28 @@ function loadPages(){
 		    	newsCenterContent += "<a href='news.html?id="+data.id+"'><div class='swiper-conntent'>";
 		    	newsCenterContent += "<p class='title'>"+data.title+"</p></div></a></div>";
 		    }
-		    $(".swiper-wrapper").html(newsCenterContent);		
+		    $(".swiper-wrapper").html(newsCenterContent);	
+		    
+		    var mySwiper = new Swiper('.swiper-container',{
+				pagination: '.pagination',
+				loop:true,
+				autoplay: 5000,
+				followFinger : false,
+				autoplayDisableOnInteraction : true,
+				autoplayDisableOnInteraction : false,
+				/*grabCursor: true,*/
+				paginationClickable: true
+			});
+		    
+			  $('.arrow-left').on('click', function(e){
+				e.preventDefault()
+				mySwiper.swipePrev()
+			  });
+			  
+			  $('.arrow-right').on('click', function(e){
+				e.preventDefault()
+				mySwiper.swipeNext()
+			  });
 	    }  
 	});
 }
