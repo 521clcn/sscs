@@ -76,7 +76,8 @@ margin: 0 auto;
 .title h2 a{color:#e11b1c; font-size:18px;}
 .title a.more{ width:65px; height:30px; display:inline-block;*display:inline;*zoom:1; line-height:30px; background:#f0f0f0; text-align:center;color:#e11b1c; font-size:12px; float:right;}
 
-.news{ width:100%; float:left; background:#fff; margin-top:30px;}
+/*.news{ width:100%; float:left; background:#fff; margin-top:30px;}*/
+.news{ width:740px; max-height:1187px; float:left; background:#fff; margin-top:30px; padding:25px;}
 .main_list{ padding:25px;padding-top:0}
 .main_list ul{}
 .main_list ul li{border-bottom:1px solid #ebebeb; padding:26px 0; min-height:116px;}
@@ -88,7 +89,7 @@ margin: 0 auto;
 .list_text span{ display:block; color:#999999; font-size:12px; line-height:30px; margin-left:180px;}
 .main_list ul li:hover .list_text h3{color:#e11b1c;}
 
-.sidebar{ width:380px; float:right;  margin-top:30px;}   
+.sidebar{ width:380px; max-height:1187px; float:right;  margin-top:30px;}   
 .donation{ padding:25px 30px; height:330px;background:#fff; }
 .donation span{ font-size:14px; color:#666666; line-height:36px; display:block;}
 .donation span em{ color:#e11b1c; font-size:24px;}
