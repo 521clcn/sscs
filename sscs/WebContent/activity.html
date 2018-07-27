@@ -4,11 +4,12 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="keywords">
 <meta name="description">
-<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0,minimum-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, maximum-scale=1.0 ">
+<meta name="viewport" content="user-scalable=no,width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
 <title>圣商慈善</title>
 <link rel="stylesheet" type="text/css" href="css/global.css">
 <link rel="stylesheet" type="text/css" href="css/institution.css">
 <link rel="stylesheet" type="text/css" href="css/info.css">
+<link rel="stylesheet" type="text/css" href="css/news.css">
 <script src="js/hm.js"></script>
 <script type="text/javascript" src="js/f7a85270d8d2aee8bef9f99f26cdb3ed.js"></script>
 <script type="text/javascript" src="js/jquery-1.10.1.min.js"></script>
@@ -116,17 +117,37 @@
 
 		<div class="content clearfix">
 			<div class="col_sidebar">
-				<ul id="ultree">													
-					<li id="zyz"><a href="partner.html?id=zyz">义工</a></li>
-					<li id="hzhb"><a href="partner.html?id=hzhb">合作伙伴</a></li>
-					<li id="axds"><a href="partner.html?id=axds">爱心大使</a></li>		
+				<ul id="ultree">								
+					<li><a href="newscenter.html">新闻动态</a></li>
+					<li id="nb"><a href="public.html?id=nb">基金会年报</a></li>
+					<li id="bg"><a href="public.html?id=bg">基金会审计报告</a></li>
+					<li id="zd"><a href="public.html?id=zd">基金会规章制度</a></li>
+					<li id="cx" class="act"><a href="activities.html">最新活动</a></li>
+							
 				</ul>
 			</div>
 
-			<div id ="contentDiv" class="col_con">
-				
-			</div>
-			<div class="clear"></div>
+			<div id ="content" class="col_con">
+			
+        <!--主要内容 -->
+            <div class="con_main">
+                <div class="article">
+                    <div class="title">
+                        <h2 class="content-title"></h2>
+                        <div class="related"><span>发布时间：</span><span id="releaseDate"></span></div>
+                    </div>
+					<div class="content-detail"></div>
+                </div>
+                <div class="back clearfix" style="display:none;">
+                    <ul>
+                        <li>上一篇：<a href=""></a></li>
+                        <li>下一篇：<a href=""></a></li>
+                    </ul>
+                    <a class="back_btn" href="">&lt; 返回列表</a>
+                </div>
+            </div>
+            </div>
+        <!--主要内容 end -->
 		</div>
 
 	</div>
@@ -148,7 +169,7 @@
 	</div>
 
 	<script type="text/javascript" src="js/aliyun.js"></script>
-	<script type="text/javascript" src="js/partner.js"></script>
+	<script type="text/javascript" src="js/news.js"></script>
 	<script type="text/javascript" src="js/address.js"></script>
 
 </body>

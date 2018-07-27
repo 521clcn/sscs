@@ -73,6 +73,8 @@ public class NewsController {
 		String address = "newsList";
 		if("1".equals(accessid)) {
 			address = "newsList1";
+		}else if("3".equals(accessid)) {
+			address = "activityList";
 		}
 		try {	 
 			String imagePath = "";

@@ -9,6 +9,7 @@
 <link rel="stylesheet" type="text/css" href="css/global.css">
 <link rel="stylesheet" type="text/css" href="css/institution.css">
 <link rel="stylesheet" type="text/css" href="css/info.css">
+<link rel="stylesheet" type="text/css" href="css/news.css">
 <script src="js/hm.js"></script>
 <script type="text/javascript" src="js/f7a85270d8d2aee8bef9f99f26cdb3ed.js"></script>
 <script type="text/javascript" src="js/jquery-1.10.1.min.js"></script>
@@ -116,16 +117,35 @@
 
 		<div class="content clearfix">
 			<div class="col_sidebar">
-				<ul id="ultree">													
-					<li id="zyz"><a href="partner.html?id=zyz">义工</a></li>
-					<li id="hzhb"><a href="partner.html?id=hzhb">合作伙伴</a></li>
-					<li id="axds"><a href="partner.html?id=axds">爱心大使</a></li>		
+				<ul id="ultree">								
+					<li><a href="newscenter.html">新闻动态</a></li>
+					<li id="nb"><a href="public.html?id=nb">基金会年报</a></li>
+					<li id="bg"><a href="public.html?id=bg">基金会审计报告</a></li>
+					<li id="zd"><a href="public.html?id=zd">基金会规章制度</a></li>
+					<li id="cx" class="act"><a href="activities.html">最新活动</a></li>
+							
 				</ul>
 			</div>
 
-			<div id ="contentDiv" class="col_con">
-				
-			</div>
+			<div id ="content" class="col_con">
+			
+            <div class="con_main">
+                <div class="title">
+                    <img src="images/notice_detail_icon2.png"><h2>最新活动</h2>
+                </div>
+                <div id="newsCenterDiv" class="main_list">
+                    <ul></ul>
+                 	<div class="page">
+                 		<a id="previous" style="cursor:pointer;">上一页</a>
+                 		<span class="current">1</span>
+                 		<a id="next" style="cursor:pointer;">下一页</a>
+                 	</div>
+                </div>
+            </div>
+            </div>
+        <!--主要内容 end -->
+			
+			
 			<div class="clear"></div>
 		</div>
 
@@ -148,8 +168,9 @@
 	</div>
 
 	<script type="text/javascript" src="js/aliyun.js"></script>
-	<script type="text/javascript" src="js/partner.js"></script>
+	<script type="text/javascript" src="js/public.js"></script>
 	<script type="text/javascript" src="js/address.js"></script>
+	<script type="text/javascript" src="js/activity.js"></script>
 
 </body>
 </html>

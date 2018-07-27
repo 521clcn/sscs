@@ -5,6 +5,7 @@
 $().ready(function(){	
 	loadPages();
 	loadNews();
+	loadActivities();
 });
 
 function loadPages(){
@@ -65,6 +66,26 @@ function loadNews(loadIndex){
 			    newsCenterContent +="</div></a></li>";
 		    }
 		    $("#newsCenterDiv ul").html(newsCenterContent);		
+	    }  
+	});
+}
+
+function loadActivities(loadIndex){
+	$.post("news/list",{accessid:"3",pageIndex:"0"},function(res){
+	    var dataList = res.data;
+	    if(dataList && dataList.length>0){
+	    	var newsCenterContent = "";
+		    for(var i=0;i<dataList.length;i++){
+		    	var data = dataList[i];
+		    	newsCenterContent += "<li class='clearfix'>";
+			    newsCenterContent +="<a href='activity.html?id="+data.id+"'>";
+			    newsCenterContent +="<img src='"+data.picPath+"'>";
+			    newsCenterContent +="<div class='list_text'><em></em>";
+			    newsCenterContent +="<h3 style='display:inline-block;margin-top:12px;margin-left:2px'>"+data.title+"</h3>";
+			    newsCenterContent +="<span style='display:inline-block;margin-left:12px'>"+convertToDate(data.releaseTime)+"</span>";
+			    newsCenterContent +="</div></a></li>";
+		    }
+		    $("#activitiesDiv ul").html(newsCenterContent);		
 	    }  
 	});
 }
