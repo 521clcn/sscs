@@ -137,3 +137,10 @@ label.disabled{background:url(../images/about/about_check1.png) left center no-r
 
 .hRadio{padding-left:22px; margin-right:40px; background: transparent url(../images/about/about_radio1.png) no-repeat left center;cursor:pointer;}
 .hRadio_Checked { background:url(../images/about/about_radio2.png) left center no-repeat;}
+
+header a img{
+	height:88px;
+	width:84px;
+	padding-top:2px;
+	padding-bottom:2px;
+}
