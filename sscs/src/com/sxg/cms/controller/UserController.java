@@ -36,33 +36,20 @@ public class UserController {
 			@RequestParam("username") String username, @RequestParam("password") String password) {
 		String path = request.getContextPath();  
 		String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path;
+		basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort();  
 		try {
 			logger.info("-------------------------login begin");
 			User user = userService.login(username, password);
 			logger.info("-------------------------login user "+user);
 			if (user != null) {
-				logger.info("-------------------------login request "+request);
 				HttpSession session = request.getSession();
-				logger.info("-------------------------login session "+session);
-				
-		        String requestPath = request.getServletPath();
-		        
-		        if(basePath.indexOf("cs.ssdjz.com.cn")!=-1) {
-		        	basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort();  
-		        }
-		        logger.info("-------------------------filter basePath "+basePath);
-		        logger.info("-------------------------filter requestPath "+requestPath);
-		        logger.info("-------------------------filter Path "+basePath+requestPath);
-		        
 				session.setAttribute("user", user);
 				session.setAttribute("username", user.getUsername());
-//				response.sendRedirect("../../admin/main.html");
 				response.sendRedirect(basePath+"/admin/main.html");
-				
-//				logger.info("-------------------------login end ");
+				logger.info("登录用户："+user.getUsername());
 			}else {
-				logger.info("-------------------------login error ");
-				response.sendRedirect(basePath+"/login.jsp?msg=error");
+				logger.info("用户名或者密码错误。");
+				response.sendRedirect(basePath+"/admin/login.html?msg=error");
 			}
 
 		} catch (Exception e) {

@@ -24,11 +24,11 @@ public class LoginAccessFilter implements Filter{
 		HttpServletRequest req = (HttpServletRequest) request;  
         HttpServletResponse resp = (HttpServletResponse) response;  
         String requestPath = req.getServletPath();
-        String path = req.getContextPath();  
-        String basePath = req.getScheme()+"://"+req.getServerName()+":"+req.getServerPort()+path;  
-        if(basePath.indexOf("cs.ssdjz.com.cn")!=-1) {
-        	basePath = req.getScheme()+"://"+req.getServerName()+":"+req.getServerPort();  
-        }
+//        String path = req.getContextPath();  
+        String basePath = req.getScheme()+"://"+req.getServerName()+":"+req.getServerPort();  
+//        if(basePath.indexOf("cs.ssdjz.com.cn")!=-1 || basePath.indexOf("sscsjjh.com")!=-1) {
+//        	basePath = req.getScheme()+"://"+req.getServerName()+":"+req.getServerPort();  
+//        }
         
         if(requestPath.equals("/admin/login.html")) {
     		chain.doFilter(req, resp);  
@@ -41,10 +41,6 @@ public class LoginAccessFilter implements Filter{
         
         logger.info("-------------------------filter username "+username);
         User user = (User) session.getAttribute("user");  
-        
-        logger.info("-------------------------filter basePath "+basePath);
-        logger.info("-------------------------filter requestPath "+requestPath);
-        logger.info("-------------------------filter Path "+basePath+requestPath);
         if (username == null || "".equals(username)) {  
             resp.sendRedirect(basePath+"/admin/login.html");  
         }else { 
