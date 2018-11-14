@@ -79,8 +79,8 @@ function loadActivities(loadIndex){
 	    var dataList = res.data;
 	    if(dataList && dataList.length>0){
 	    	var length = dataList.length;
-	    	if(length>3){
-	    		length=3;
+	    	if(length>2){
+	    		length=2;
 	    	}
 	    	var newsCenterContent = "";
 		    for(var i=0;i<length;i++){
